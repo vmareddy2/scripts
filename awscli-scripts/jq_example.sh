@@ -1,1 +1,1 @@
-aws datapipeline list-pipelines --profile SQA --region us-east-1 | ~/jq '.[]' | ~/jq '.[] | select(.name | contains("BDP"))' | grep id | awk -F \" '{ print $4 }'
+aws datapipeline list-pipelines --region us-east-1 | ~/jq '.[]' | ~/jq '.[] | select(.name | contains("BAD"))' | grep id | awk -F \" '{ print $4 }'
